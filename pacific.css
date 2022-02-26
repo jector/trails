@@ -1,0 +1,236 @@
+*{
+    box-sizing: content-box;
+}
+body{
+    background: #EAEAEA;
+    color: #666;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header {
+    background: #002171;
+    color: #fff;
+    text-align: center;
+}
+header a{
+    text-decoration: none;
+}
+header a:link, header a:visited{
+    color: #fff;
+}
+header a:hover{
+    color: #90C7E3;
+}
+nav{
+    font-weight: bold;
+    padding: 0;
+    font-size: 120%;
+    text-align: center;
+}
+nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 1.2em;
+}
+nav li{
+    border-bottom: 1px solid darkblue;
+}
+nav a{
+    text-decoration: none;
+    transition: 3s ease-out;
+}
+nav a:link{
+    color: #5C7FA3;
+}
+nav a:visited{
+    color: #344873 ;
+}
+nav a:hover{
+    color: #A52A2A;
+}
+main{
+    padding: 1px 20px 20px 30px ;
+    display: block;
+    background: #fff;
+    overflow: auto;
+}
+h1{
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    letter-spacing: 0.25em;
+    padding: 0.5em 0;
+}
+h2{
+    color: #1976D2;
+    font-family: Georgia, "Times New Roman", serif;
+    text-shadow: 1px 1px 1px #ccc;
+}
+h3{
+    font-family: Georgia, "Times New Roman", serif;
+    color: #000033;
+}
+main ul{
+    list-style-image: url("marker.gif");
+}
+dt{
+    color: #002171;
+}
+footer{
+    font-size: 75%;
+    font-style: italic;
+    text-align: center;
+    font-family: Georgia, "Times New Roman", serif;
+    padding: 2em;
+    background: #fff;
+}
+video, embed{
+    float: right;
+    padding-left: 20px;
+}
+.resort{
+    color: #1976D2;
+    font-weight: bold;
+}
+#contact{
+    font-size: 90%;
+}
+#wrapper{
+    background: #90C7E3;
+    background: -moz-linear-gradient(top, #ffffff 0%, #90C7E3 100%);
+    background: -webkit-linear-gradient(top, #ffffff 0%,#90C7E3 100%);
+    background: linear-gradient(to bottom, #ffffff 0%,#90C7E3 100%);
+}
+
+#homehero{
+    height: 300px;
+    background: url("coast2.jpg") no-repeat center center transparent;
+    background-size: 100% 100%;
+}
+#yurthero{
+    height: 300px;
+    background: url("yurt.jpg") no-repeat center center transparent;
+    background-size: 100% 100%;
+}
+#trailhero{
+    height: 300px;
+    background: url("trail.jpg") no-repeat center center transparent;
+    background-size: 100% 100%;
+}
+
+table{
+    border: 2px solid #3399CC;
+    border-collapse: collapse;
+}
+table th, table td{
+    border: 2px solid #3399CC;
+    padding: .5em;
+}
+table tr:nth-of-type(odd) {
+    background-color: #F5FAFC;
+}
+table td{
+    text-align: center;
+}
+table .text{
+    text-align: left;
+}
+form{
+    display: flex;
+    flex-flow: column nowrap;;
+}
+input, textarea{
+    margin-bottom: .5em;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    opacity: 1;
+}
+
+@media screen and (min-width: 600px) {
+    nav ul{
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+    nav li{
+        border-bottom: none;
+        flex: 1;
+    }
+    section{
+        padding: 2em;
+    }
+    .content main{
+        display: grid;
+        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    h2{
+        grid-row: 1/2;
+        grid-column: 1/5;
+    }
+    section{
+        grid-row: 2/3;
+        grid-column: auto;
+    }
+    #special{
+        grid-row: auto;
+        grid-column: 1/5;
+    }
+    footer{
+        grid-row: auto;
+        grid-column: 1/5;
+    }
+    form{
+        width: 60%;
+        display: grid;
+        grid-gap: 1em;
+        grid-template-columns: 6em 1fr;
+        grid-template-rows: auto;
+    }
+    input[type=submit]{
+        width: 9em;
+        grid-column: 3/2;
+    }
+}
+@media screen and (min-width: 1024px) {
+    nav{
+        text-align: left;
+        padding-left: 1em;
+    }
+    nav ul{
+        flex-direction: column;
+        padding-top: 1em;
+    }
+    #wrapper{
+        margin: 0 auto;
+        width: 80%;
+        border: 1px solid darkblue;
+        box-shadow: 1px 1px 1px rgba(0,0,0,.5);
+        display: grid;
+        grid-template-columns: 180px 1fr;
+        grid-template-rows: auto;
+        gap: 0px 0px;
+        grid-auto-flow: row;
+        grid-template-areas:
+                "header header"
+                "nav div"
+                "nav main"
+                "nav footer";
+    }
+    header {
+        grid-area: header;
+    }
+    nav {
+        grid-area: nav;
+    }
+    div {
+        grid-area: div;
+    }
+    main {
+        grid-area: main;
+    }
+    footer {
+        grid-area: footer;
+    }
+}
